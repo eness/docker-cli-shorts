@@ -155,8 +155,8 @@ function dm-fn {
 
 # Aliases
 alias dc=dc-fn
-alias dcu="docker-compose up -d"
-alias dcd="docker-compose down"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
 alias dcr=dcr-fn
 alias dm=dm-fn
 alias dex=dex-fn
