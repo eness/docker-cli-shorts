@@ -173,3 +173,5 @@ alias drun=drun-fn
 alias dsp="docker system prune --all"
 alias dsr=dsr-fn
 alias dr="docker restart"
+alias docker-compose='docker compose'
+alias dcfc="docker compose up -d --force-recreate $1"
