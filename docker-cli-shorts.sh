@@ -178,7 +178,6 @@ alias docker-compose='docker compose'
 alias dcfc="docker compose up -d --force-recreate $1"
 alias b='f() { local user="$2"; local append=""; [ -n "$user" ] && append="-u $user"; docker container exec -it $append "$1" bash; }; f'
 alias bsh='f() { local user="$2"; local append=""; [ -n "$user" ] && append="-u $user"; docker container exec -it $append "$1" sh; }; f'
-
 alias dps='f() {
   show_ports=false
   args=()
@@ -193,7 +192,7 @@ alias dps='f() {
   if $show_ports; then
     docker ps "${args[@]}"
   else
-    docker ps --format "table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}" "${args[@]}"
+    docker ps --format "table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}" "${args[@]}"
   fi
 }; f'
 alias dpsa="dps -a"
