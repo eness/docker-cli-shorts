@@ -30,6 +30,9 @@
 #     dsr <name>     : stop and remove container                           #
 #     dlab <label>   : container ID by label                               #
 #     dsp            : docker system prune --all                           #
+#     dcfc           : re-create container on docker compose               #
+#     b              : login to bash shell of container                    #
+#     bsh            : login to sh shell of container                      #
 #                                                                          #
 ############################################################################
 
@@ -175,3 +178,5 @@ alias dsr=dsr-fn
 alias dr="docker restart"
 alias docker-compose='docker compose'
 alias dcfc="docker compose up -d --force-recreate $1"
+alias b='f() { local user="$2"; local append=""; [ -n "$user" ] && append="-u $user"; docker container exec -it $append "$1" bash; }; f'
+alias bsh='f() { local user="$2"; local append=""; [ -n "$user" ] && append="-u $user"; docker container exec -it $append "$1" sh; }; f'
