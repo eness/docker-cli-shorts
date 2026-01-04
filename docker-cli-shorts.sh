@@ -168,8 +168,6 @@ alias dim="docker images"
 alias dip=dip-fn
 alias dl=dl-fn
 alias dnames=dnames-fn
-alias dps="docker ps"
-alias dpsa="docker ps -a"
 alias drmc=drmc-fn
 alias drmid=drmid-fn
 alias drun=drun-fn
@@ -180,3 +178,22 @@ alias docker-compose='docker compose'
 alias dcfc="docker compose up -d --force-recreate $1"
 alias b='f() { local user="$2"; local append=""; [ -n "$user" ] && append="-u $user"; docker container exec -it $append "$1" bash; }; f'
 alias bsh='f() { local user="$2"; local append=""; [ -n "$user" ] && append="-u $user"; docker container exec -it $append "$1" sh; }; f'
+
+alias dps='f() {
+  show_ports=false
+  args=()
+  for arg in "$@"; do
+    if [[ "$arg" == "-p" ]]; then
+      show_ports=true
+    else
+      args+=("$arg")
+    fi
+  done
+
+  if $show_ports; then
+    docker ps "${args[@]}"
+  else
+    docker ps --format "table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}" "${args[@]}"
+  fi
+}; f'
+alias dpsa="dps -a"
