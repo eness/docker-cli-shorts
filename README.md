@@ -32,6 +32,16 @@ Or copy the contents of `docker-cli-shorts.sh` into your `.bashrc` or `.zshrc`.
 
 ---
 
+## Dops Command
+
+Install `dops` with:
+
+```bash
+wget "https://github.com/Mikescher/better-docker-ps/releases/latest/download/dops_linux-amd64-static" -O "/usr/local/bin/dops" && sudo chmod +x "/usr/local/bin/dops"
+```
+
+---
+
 ## 🛠️ Usage
 
 | Command             | Description                                                                 |
