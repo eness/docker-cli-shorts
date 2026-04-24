@@ -43,7 +43,7 @@ wget "https://github.com/Mikescher/better-docker-ps/releases/latest/download/dop
 Sampe alias with custom columns :
 
 ```bash
-alias dops='dops --format "table {{.ID}}\\t{{.Names}}\\t{{.State}}\\t{{.Status}}\\t{{.Ports}}"'
+alias dops='dops --all --format "table {{.ID}}\\t{{.Names}}\\t{{.State}}\\t{{.Status}}\\t{{.Ports}}"'
 ```
 
 ---
