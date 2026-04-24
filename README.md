@@ -40,6 +40,12 @@ Install `dops` with:
 wget "https://github.com/Mikescher/better-docker-ps/releases/latest/download/dops_linux-amd64-static" -O "/usr/local/bin/dops" && sudo chmod +x "/usr/local/bin/dops"
 ```
 
+Sampe alias with custom columns :
+
+```bash
+alias dops='dops --format "table {{.ID}}\\t{{.Names}}\\t{{.State}}\\t{{.Status}}\\t{{.Ports}}"'
+```
+
 ---
 
 ## 🛠️ Usage
